@@ -6,20 +6,17 @@
  let btn6 = $('.js-btn70');
 
  value_percent = 0;
-function progressBar() {
-	if (value_percent >= 100) {
-		$(".progress-bar-animated").width(100 + '%');
-		$(".progress-bar-animated").text(100 + '%');
-  } 
-  else if (value_percent <= 0) {
-    $(".progress-bar-animated").width(0 + '%');
-		$(".progress-bar-animated").text(0 + '%');
-  }
-	else {
-		$(".progress-bar-animated").width(value_percent + '%');
-		$(".progress-bar-animated").text(value_percent + '%');
-	}
-};
+ function progressBar() {
+	 if (value_percent > 100) {
+		 value_percent = 100;
+	 }
+	 if (value_percent < 0) {
+		 value_percent = 0;
+	 }
+	 $(".progress-bar-animated").width(value_percent + '%');
+	 $(".progress-bar-animated").text(value_percent + '%');
+ };
+ 
 progressBar();
 btn1.click(() => {
 	value_percent += 1;
